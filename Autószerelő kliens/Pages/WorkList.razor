@@ -1,0 +1,44 @@
+﻿@page "/"
+
+<PageTitle>Munkák listája</PageTitle>
+
+@if (WorkToList == null)
+{
+	<Loading></Loading>
+}
+else
+{
+	<h3>Munkák</h3>
+	<input type="text" class="form-control" placeholder="Keresés név szerint" value="@_search" @oninput=UpdateWorkToList />
+	
+	<table class="table">
+		<thead>
+			<tr>
+				<td>Ügyfél neve</td>
+				<td>Autó típusa</td>
+				<td>Rendszám</td>
+				<td>Gyártási év</td>
+				<td>Munka leírása</td>
+				<td>Hiba</td>
+				<td>Súlyosság</td>
+
+				<td></td>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var w in WorkToList)
+			{
+				<tr>
+					<td>@w.Name</td>
+					<td>@w.Type</td>
+					<td>@w.ID</td>
+					<td>@w.Year</td>
+					<td>@w.Workdetails</td>
+					<td>@w.Error</td>
+					<td>@w.Seriousness</td>
+					<td><a href=@($"{p.Id}") class="btn btn-primary table-btn">Részletek</a></td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}

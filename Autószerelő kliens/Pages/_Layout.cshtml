@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+@namespace Autoszerelo_client.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="~/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="OrvosKliens.styles.css" rel="stylesheet" />
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/loading.css" rel="stylesheet" />
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+</head>
+<body>
+    @RenderBody()
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            Hiba történt. Az alkalmazás nem válaszol újratöltésig.
+        </environment>
+        <environment include="Development">
+            Ez az oldal nem található. Részletekért bézze meg a böngésző fejlesztői eszközeit.
+        </environment>
+        <a href="" class="reload">Újratöltés</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>

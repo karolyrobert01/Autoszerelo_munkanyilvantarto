@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autoszerelo_client", "Autószerelő kliens\Autoszerelo_client.csproj", "{EEA17295-7E5A-432E-9ACA-A0DE47D9D92F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autoszerelo_client", "Autószerelő kliens\Autoszerelo_client.csproj", "{EEA17295-7E5A-432E-9ACA-A0DE47D9D92F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{C8FDC850-7F53-495D-8B2C-1966E7742C31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Server\Server.csproj", "{C8FDC850-7F53-495D-8B2C-1966E7742C31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Munkafelvevo_client", "Munkafelvevo_client\Munkafelvevo_client.csproj", "{E9929AEF-3CC8-4382-8319-BE5828CA9212}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munkafelvevo_client", "Munkafelvevo_client\Munkafelvevo_client.csproj", "{E9929AEF-3CC8-4382-8319-BE5828CA9212}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
