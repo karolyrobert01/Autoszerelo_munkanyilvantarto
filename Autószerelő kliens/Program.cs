@@ -1,4 +1,4 @@
-using Autószerelő_kliens;
+using Autoszerelo_client;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
