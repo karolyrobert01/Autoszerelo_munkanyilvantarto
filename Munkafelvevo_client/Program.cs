@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Munkafelvevo_client;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
