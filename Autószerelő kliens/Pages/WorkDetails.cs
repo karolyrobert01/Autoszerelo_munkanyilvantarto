@@ -53,7 +53,7 @@ namespace Autoszerelo_client.Pages
             _statusMessage = "Hibás adatok vannak megadva!";
         }
 
-        private async Task DeletePatient()
+        private async Task DeleteWork()
         {
             await HttpClient.DeleteAsync($"work/{Id}");
 

@@ -46,7 +46,7 @@ namespace Server.Controllers
         {
             var works = WorkRepository.LoadWorks().ToList();
 
-            var workToUpdate = works.FirstOrDefault(p => p.Id == work.Id);
+            var workToUpdate = works.FirstOrDefault(w => w.Id == work.Id);
             if (workToUpdate is not null)
             {
                 works.Remove(workToUpdate);

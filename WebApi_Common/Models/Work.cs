@@ -23,11 +23,11 @@ namespace WebApi_Common.Models
         public string ID { get; set; }
 
         [Required(ErrorMessage = "Az év kitöltése kötelező")]
-        //[YearValidation]
+        [YearValidation]
         public string Year { get; set; }
 
         [Required(ErrorMessage = "A munka leírás kitöltése kötelező")]
-        //[WorkDetailsValidation]
+        [WorkDetailsValidation]
         public string Workdetails { get; set; }
 
         //[ErrorValidation]
