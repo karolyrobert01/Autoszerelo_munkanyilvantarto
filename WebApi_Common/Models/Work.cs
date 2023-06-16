@@ -19,7 +19,7 @@ namespace WebApi_Common.Models
 
 
         [Required(ErrorMessage = "A típus kitöltése kötelező")]
-        [TypeValidation]
+        //[TypeValidation]
         public string Type { get; set; }
 
 
@@ -28,20 +28,20 @@ namespace WebApi_Common.Models
         public string ID { get; set; }
 
         [Required(ErrorMessage = "Az év kitöltése kötelező")]
-        [YearValidation]
+        //[YearValidation]
         public string Year { get; set; }
 
         [Required(ErrorMessage = "A munka leírás kitöltése kötelező")]
-        [WorkDetailsValidation]
+        //[WorkDetailsValidation]
         public string Workdetails { get; set; }
 
-        [Required(ErrorMessage = "A hiba kitöltése kötelező")]
-        [ErrorValidation]
+        //[Require+d(ErrorMessage = "A hiba kitöltése kötelező")]
+        //[ErrorValidation]
         public string Error { get; set; }
 
         [Required(ErrorMessage = "A súlyosság kitöltése kötelező")]
         public string Seriousness { get; set; }
-        [SeriousnessValidation]
+        //[SeriousnessValidation]
 
         //public string Diagnosis { get; set; }
 
