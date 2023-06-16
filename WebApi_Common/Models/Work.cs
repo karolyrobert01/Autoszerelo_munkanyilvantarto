@@ -35,19 +35,13 @@ namespace WebApi_Common.Models
         //[WorkDetailsValidation]
         public string Workdetails { get; set; }
 
-        //[Require+d(ErrorMessage = "A hiba kitöltése kötelező")]
         //[ErrorValidation]
         public string Error { get; set; }
 
         [Required(ErrorMessage = "A súlyosság kitöltése kötelező")]
         public string Seriousness { get; set; }
-        public object RecordTime { get; set; }
 
         //[SeriousnessValidation]
-
-        //public string Diagnosis { get; set; }
-
-
         public override string ToString()
         {
             return $"{Name} - {Type} - {ID}";

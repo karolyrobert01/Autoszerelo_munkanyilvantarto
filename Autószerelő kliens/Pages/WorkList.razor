@@ -1,11 +1,8 @@
 ﻿@page "/"
-@inherits OwningComponentBase<MyService>
-@inject IModalService ModalService
-@inject IJSRuntime JSRuntime
 
 <PageTitle>Munkák listája</PageTitle>
 
-@if (WorkToList == null)
+@if (workToList == null)
 {
 	<Loading></Loading>
 }
@@ -29,7 +26,7 @@ else
 			</tr>
 		</thead>
 		<tbody>
-			@foreach (var w in WorkToList)
+			@foreach (var w in workToList)
 			{
 				<tr>
 					<td>@w.Name</td>

@@ -11,13 +11,47 @@
              <ValidationMessage For="@(() => Work.Name)" />
         </div>
     </div>
-    
+    <div class="mb-3 row">
+        <label for="Rendszam" class="col-md-2 col-form-label">Rendszám: </label>
+        <div class=" col-sm-8">
+            <InputText id="Rendszam" class="form-control" @bind-Value="@Work.ID" placeholder="Adja meg Rendszámot"></InputText>
+            <ValidationMessage For="@(() => Work.ID)" />
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="Type" class="col-md-2 col-form-label">Típus: </label>
+        <div class=" col-sm-8">
+            <InputText id="Type" class="form-control" @bind-Value="@Work.Type" placeholder="Adja meg a típust"></InputText>
+            <ValidationMessage For="@(() => Work.Type)" />
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="Year" class="col-md-2 col-form-label">Év: </label>
+        <div class=" col-sm-8">
+            <InputText id="Year" class="form-control" @bind-Value="@Work.Year" placeholder="Adja meg a gyártási évet"></InputText>
+            <ValidationMessage For="@(() => Work.Year)" />
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="Name" class="col-md-2 col-form-label">Név: </label>
+        <div class=" col-sm-8">
+            <InputText id="Workdetails" class="form-control" @bind-Value="@Work.Workdetails" placeholder="Adja meg a részleteket"></InputText>
+            <ValidationMessage For="@(() => Work.Workdetails)" />
+        </div>
+    </div>
 
     <div class="mb-3 row">
-        <label for="Symptom" class="col-md-2 col-form-label">Tünetek: </label>
+        <label for="Error" class="col-md-2 col-form-label">Hiba: </label>
         <div class=" col-sm-8">
-            <InputText id="Symptom" class="form-control" @bind-Value="@Work.ID" placeholder="Írja be a tapasztalt tüneteket"></InputText>
-            <ValidationMessage For="@(() => Work.ID)" />
+            <InputText id="Error" class="form-control" @bind-Value="@Work.Error" placeholder="Adja meg a hibát"></InputText>
+            <ValidationMessage For="@(() => Work.Error)" />
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <label for="Seriousness" class="col-md-2 col-form-label">Súlyosság: </label>
+        <div class=" col-sm-8">
+            <InputText id="Seriousness" class="form-control" @bind-Value="@Work.Seriousness" placeholder="Adja meg a súlyosságot"></InputText>
+            <ValidationMessage For="@(() => Work.Seriousness)" />
         </div>
     </div>
 

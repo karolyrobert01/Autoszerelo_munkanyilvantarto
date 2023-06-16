@@ -25,7 +25,7 @@ namespace Munkafelvevo_client.Pages
             var message = await HttpClient.PostAsJsonAsync("work", Work);
 
             _statusClass = "alert-info";
-            _statusMessage = "Beteg rögzítve";
+            _statusMessage = "Munka rögzítve";
             HttpRespond(message);
             ClearInputFields();
 
@@ -33,7 +33,13 @@ namespace Munkafelvevo_client.Pages
         public void ClearInputFields()
         {
             Work.Name = String.Empty;
+            Work.Type = String.Empty;
 			Work.ID = String.Empty;
+            Work.Year = String.Empty;
+            Work.Workdetails = String.Empty;
+            Work.Error = String.Empty;
+            Work.Seriousness = String.Empty;
+
         }
 
         private async Task InvalidSubmit()

@@ -18,7 +18,6 @@ internal class Program
             app.UseExceptionHandler("/Error");
         }
 
-
         app.UseStaticFiles();
 
         app.UseRouting();
