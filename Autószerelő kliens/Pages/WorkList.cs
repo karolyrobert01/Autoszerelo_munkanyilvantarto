@@ -8,11 +8,11 @@ namespace Autoszerelo_client.Pages
         [Inject]
         public HttpClient HttpClient { get; set; }
 
-        public Work[] workToList { get; set; }
+        public Work[] WorkToList { get; set; }
 
         private Work[] _works;
 
-        private string _search { get; set; }
+        public string _search { get; set; }
 
 		protected async Task OnInitializedAsync()
 		{
@@ -21,12 +21,12 @@ namespace Autoszerelo_client.Pages
 				.OrderBy(w => w.ID)
 				.ToArray();
 
-			UpdatePatientsToList(null);
+			UpdateWorkToList(null);
 
 			await OnInitializedAsync();
 		}
 
-		private void UpdatePatientsToList(ChangeEventArgs? args)
+		private void UpdateWorkToList(ChangeEventArgs? args)
         {
             if (args is not null)
             {
@@ -37,7 +37,7 @@ namespace Autoszerelo_client.Pages
                 _search = "";
             }
 
-            workToList = _works.Where(w => w.Name.Contains(_search)).ToArray();
+            WorkToList = _works.Where(w => w.Name.Contains(_search)).ToArray();
         }
     }
 }

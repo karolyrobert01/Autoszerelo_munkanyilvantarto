@@ -27,7 +27,7 @@ namespace Autoszerelo_client.Pages
             await base.OnInitializedAsync();
         }
 
-        private async Task ModifyPatient()
+        private async Task ModifyWork()
         {
             _statusClass = "";
             _statusMessage = "";

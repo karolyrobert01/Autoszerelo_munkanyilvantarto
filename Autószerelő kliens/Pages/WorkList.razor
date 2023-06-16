@@ -1,8 +1,8 @@
 ﻿@page "/"
-
+@using WebApi_Common.Models;
 <PageTitle>Munkák listája</PageTitle>
 
-@if (workToList == null)
+@if (WorkToList == null)
 {
 	<Loading></Loading>
 }
@@ -26,7 +26,7 @@ else
 			</tr>
 		</thead>
 		<tbody>
-			@foreach (var w in workToList)
+			@foreach (var w in WorkToList)
 			{
 				<tr>
 					<td>@w.Name</td>
