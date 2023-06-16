@@ -41,6 +41,8 @@ namespace WebApi_Common.Models
 
         [Required(ErrorMessage = "A súlyosság kitöltése kötelező")]
         public string Seriousness { get; set; }
+        public object RecordTime { get; set; }
+
         //[SeriousnessValidation]
 
         //public string Diagnosis { get; set; }

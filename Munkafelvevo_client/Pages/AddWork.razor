@@ -1,0 +1,25 @@
+﻿@page "/"
+@using WebApi_Common;
+
+<EditForm Model="@Work" OnValidSubmit="@Submit" OnInvalidSubmit=@InvalidSubmit>
+    <div class="alert @_statusClass">@_statusMessage</div>
+    <DataAnnotationsValidator />
+    <div class="mb-3 row">
+        <label for="Name" class="col-md-2 col-form-label">Név: </label>
+        <div class=" col-sm-8">
+            <InputText id="Name" class="form-control" @bind-Value="@Work.Name" placeholder="Adja meg a teljes nevét"></InputText>
+             <ValidationMessage For="@(() => Work.Name)" />
+        </div>
+    </div>
+    
+
+    <div class="mb-3 row">
+        <label for="Symptom" class="col-md-2 col-form-label">Tünetek: </label>
+        <div class=" col-sm-8">
+            <InputText id="Symptom" class="form-control" @bind-Value="@Work.ID" placeholder="Írja be a tapasztalt tüneteket"></InputText>
+            <ValidationMessage For="@(() => Work.ID)" />
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Felvitel</button>
+</EditForm>

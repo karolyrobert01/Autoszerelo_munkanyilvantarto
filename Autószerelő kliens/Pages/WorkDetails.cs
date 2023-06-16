@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Net.Http.Json;
+using WebApi_Common.Models;
 
 namespace Autoszerelo_client.Pages
 {
@@ -31,7 +32,6 @@ namespace Autoszerelo_client.Pages
             _statusClass = "";
             _statusMessage = "";
 
-            Work.Diagnosis = Work.Diagnosis ?? "";    //  Error 400 ha ez nincs itt
 
             var res = await HttpClient.PutAsJsonAsync<Work>($"work", Work);
 
