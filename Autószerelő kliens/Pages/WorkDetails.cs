@@ -39,7 +39,8 @@ namespace Autoszerelo_client.Pages
             {
                 _statusClass = "alert-info";
                 _statusMessage = "Adatok sikeresen módosítva!";
-            }
+				NavigationManager.NavigateTo("/");
+			}
             else
             {
                 _statusClass = "alert-danger";
