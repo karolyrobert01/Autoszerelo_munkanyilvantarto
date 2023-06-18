@@ -27,7 +27,7 @@ namespace Autoszerelo_client.Pages
             await base.OnInitializedAsync();
         }
 
-        private async Task ModifyPatient()
+        private async Task ModifyWork()
         {
             _statusClass = "";
             _statusMessage = "";
@@ -39,7 +39,8 @@ namespace Autoszerelo_client.Pages
             {
                 _statusClass = "alert-info";
                 _statusMessage = "Adatok sikeresen módosítva!";
-            }
+				NavigationManager.NavigateTo("/");
+			}
             else
             {
                 _statusClass = "alert-danger";
@@ -53,7 +54,7 @@ namespace Autoszerelo_client.Pages
             _statusMessage = "Hibás adatok vannak megadva!";
         }
 
-        private async Task DeletePatient()
+        private async Task DeleteWork()
         {
             await HttpClient.DeleteAsync($"work/{Id}");
 

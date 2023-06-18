@@ -7,55 +7,48 @@
 }
 else
 {
-	<h3>@Work.Name adatai</h3>
+	<h3>@Work.Name adatai:</h3>
 
-	<EditForm Model="@Work" OnValidSubmit="@ModifyWork" OnInvalidSubmit="@InvalidSubmit">
+	<EditForm Model="@Work" OnValidSubmit="@ModifyWork" OnInvalidSubmit="@ModifyWork">
 		<div class="alert @_statusClass">@_statusMessage</div>
 		<DataAnnotationsValidator />
 		<div class="mb-3 row">
-			<label for="Name" class="col-md-2 col-form-label">Név</label>
+			<label for="Name" class="col-md-2 col-form-label">Név:</label>
 			<div class="col-md-8">
 				<InputText id="Name" class="form-control" @bind-Value="@Work.Name"></InputText>
 				<ValidationMessage For="@(() => Work.Name)" />
 			</div>
 		</div>
 		<div class="mb-3 row">
-			<label for="Type" class="col-md-2 col-form-label"></label>
+			<label for="Type" class="col-md-2 col-form-label">Típus:</label>
 			<div class="col-md-8">
 				<InputText id="Type" class="form-control" @bind-Value="@Work.Type"></InputText>
 				<ValidationMessage For="@(() => Work.Type)" />
 			</div>
 		</div>
 		<div class="mb-3 row">
-			<label for="Rendszam" class="col-md-2 col-form-label">Rendszám</label>
+			<label for="Rendszam" class="col-md-2 col-form-label">Rendszám:</label>
 			<div class="col-md-8">
-				<InputText id="Rendszam" class="form-control" @bind-Value="@Work.ID"></InputText>
-				<ValidationMessage For="@(() => Work.ID)" />
+				<InputText id="Rendszam" class="form-control" @bind-Value="@Work.RSZ"></InputText>
+				<ValidationMessage For="@(() => Work.RSZ)" />
 			</div>
 		</div>
 		<div class="mb-3 row">
-			<label for="SSN" class="col-md-2 col-form-label"></label>
-			<div class="col-md-8">
-				<InputText id="Year" class="form-control" @bind-Value="@Work.Year"></InputText>
-				<ValidationMessage For="@(() => Work.Year)" />
-			</div>
-		</div>
-		<div class="mb-3 row">
-			<label for="WorkDetails" class="col-md-2 col-form-label">Munka</label>
+			<label for="WorkDetails" class="col-md-2 col-form-label">Munka leírása:</label>
 			<div class="col-md-8">
 				<InputTextArea id="WorkDetails" class="form-control" @bind-Value="@Work.Workdetails"></InputTextArea>
 				<ValidationMessage For="@(() => Work.Workdetails)" />
 			</div>
 		</div>
 		<div class="mb-3 row">
-			<label for="Error" class="col-md-2 col-form-label">Hiba</label>
+			<label for="Error" class="col-md-2 col-form-label">Hiba:</label>
 			<div class="col-md-8">
 				<InputTextArea id="Error" class="form-control" @bind-Value="@Work.Error" rows="4"></InputTextArea>
 				<ValidationMessage For="@(() => Work.Error)" />
 			</div>
 		</div>
 		<div class="mb-3 row">
-			<label for="Seriousness" class="col-md-2 col-form-label">Hiba</label>
+			<label for="Seriousness" class="col-md-2 col-form-label">Súlyosság:</label>
 			<div class="col-md-8">
 				<InputTextArea id="Seriousness" class="form-control" @bind-Value="@Work.Seriousness" rows="4"></InputTextArea>
 				<ValidationMessage For="@(() => Work.Seriousness)" />
@@ -64,7 +57,7 @@ else
 		<div class="mb-3 row">
 			<div class="col-md-12">
 				<button type="submit" class="btn btn-primary">Módosítás</button>
-				<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal">Páciens törlése</button>
+				<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal">A munka törlése</button>
 				<a href=@($"/")><input type="button" value="Mégse" class="btn btn-secondary" /></a>
 			</div>
 		</div>
@@ -81,8 +74,8 @@ else
 					<p>Biztosan törtli @Work.Name-t a rendszerből?</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
-					<button type="button" class="btn btn-danger" data-bs-dismiss="modal" @onclick=DeletePatient>Törlés</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vissza</button>
+					<button type="button" class="btn btn-danger" data-bs-dismiss="modal" @onclick=DeleteWork>Törlés</button>
 				</div>
 			</div>
 		</div>

@@ -2,14 +2,14 @@
 
 <PageTitle>Munkák listája</PageTitle>
 
-@if (workToList == null)
+@if (WorkToList == null)
 {
 	<Loading></Loading>
 }
 else
 {
 	<h3>Munkák</h3>
-	<input type="text" class="form-control" placeholder="Keresés név szerint" value="@_search" @oninput=UpdateWorkToList />
+	<input type="text" class="form-control" placeholder="Keresés név szerint" value="@Search" @oninput=UpdateWorkToList />
 	
 	<table class="table">
 		<thead>
@@ -21,17 +21,16 @@ else
 				<td>Munka leírása</td>
 				<td>Hiba</td>
 				<td>Súlyosság</td>
-
 				<td></td>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach (var w in workToList)
+			@foreach (Work w in WorkToList)
 			{
 				<tr>
 					<td>@w.Name</td>
 					<td>@w.Type</td>
-					<td>@w.ID</td>
+					<td>@w.RSZ</td>
 					<td>@w.Year</td>
 					<td>@w.Workdetails</td>
 					<td>@w.Error</td>

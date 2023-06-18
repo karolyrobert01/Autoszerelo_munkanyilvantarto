@@ -1,43 +1,49 @@
 ﻿using WebApi_Common.Models;
+using System.Net.Http.Json;
 using Microsoft.AspNetCore.Components;
+using Server.Repositories;
+using System;
 
 namespace Autoszerelo_client.Pages
 {
-    public partial class workList
+    public partial class WorkList
 	{
         [Inject]
         public HttpClient HttpClient { get; set; }
 
-        public Work[] workToList { get; set; }
+        public Work[] WorkToList { get; set; }
+		//public Work[] WorkToList2 { get; set; }
 
-        private Work[] _works;
+		private Work[] _works;
 
-        private string _search { get; set; }
+        public string Search { get; set; }
+	    
 
-		protected async Task OnInitializedAsync()
+        protected override async Task OnInitializedAsync()
 		{
 			_works = await HttpClient.GetFromJsonAsync<Work[]>("work");
 			_works = _works
-				.OrderBy(w => w.ID)
+				.OrderBy(w => w.RSZ)
 				.ToArray();
 
-			UpdatePatientsToList(null);
+			UpdateWorkToList(null);
 
-			await OnInitializedAsync();
+			await base.OnInitializedAsync();
 		}
 
-		private void UpdatePatientsToList(ChangeEventArgs? args)
+		private void UpdateWorkToList(ChangeEventArgs? args)
         {
             if (args is not null)
             {
-                _search = (string)args.Value;
+                Search = (string)args.Value;
             }
             else
             {
-                _search = "";
+                Search = "";
             }
 
-            workToList = _works.Where(w => w.Name.Contains(_search)).ToArray();
-        }
+            WorkToList = _works.Where(w => w.Name.Contains("")).ToArray();
+            //WorkToList2 = (Work[])WorkRepository.LoadWorks();
+		}
     }
 }

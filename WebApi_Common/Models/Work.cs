@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 using WebApi_Common.Validation;
 
 namespace WebApi_Common.Models
@@ -17,34 +12,36 @@ namespace WebApi_Common.Models
         public string Name { get; set; }
 
 
-
         [Required(ErrorMessage = "A típus kitöltése kötelező")]
-        //[TypeValidation]
+        [TypeValidation]
         public string Type { get; set; }
 
 
         [Required(ErrorMessage = "A Rendszám kitöltése kötelező!")]
         [IDValidation]
-        public string ID { get; set; }
+        public string RSZ { get; set; }
 
         [Required(ErrorMessage = "Az év kitöltése kötelező")]
-        //[YearValidation]
+        [YearValidation]
         public string Year { get; set; }
 
         [Required(ErrorMessage = "A munka leírás kitöltése kötelező")]
-        //[WorkDetailsValidation]
+        [WorkDetailsValidation]
         public string Workdetails { get; set; }
 
-        //[ErrorValidation]
+		[Required(ErrorMessage = "A hiba leírás kitöltése kötelező")]
+		[ErrorValidation]
         public string Error { get; set; }
 
-        [Required(ErrorMessage = "A súlyosság kitöltése kötelező")]
-        public string Seriousness { get; set; }
 
-        //[SeriousnessValidation]
+        [Required(ErrorMessage = "A súlyosság kitöltése kötelező")]
+		[SeriousnessValidation]
+		public string Seriousness { get; set; }
+
+        
         public override string ToString()
         {
-            return $"{Name} - {Type} - {ID}";
+            return $"{Name} - {Type} - {RSZ}";
         }
     }
 }
