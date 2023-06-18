@@ -1,7 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
-using System.ComponentModel.DataAnnotations;
-using System.Text.RegularExpressions;
 
 namespace WebApi_Common.Validation
 {

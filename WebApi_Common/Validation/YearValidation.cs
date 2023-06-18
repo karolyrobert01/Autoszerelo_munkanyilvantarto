@@ -12,9 +12,9 @@ namespace WebApi_Common.Validation
     {
 		protected override ValidationResult IsValid(object value, ValidationContext validationContext)
 		{
-			string ssnValue = value.ToString() ?? " ";
+			string YEARValue = value.ToString() ?? " ";
 
-			if (Regex.IsMatch(ssnValue, @"^\d{3}-\s{3}$"))
+			if (Regex.IsMatch(YEARValue, @"^(19[0-9]{2}|20[0-2][0-3])$"))
 			{
 				return null;
 			}

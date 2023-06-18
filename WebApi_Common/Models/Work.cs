@@ -12,15 +12,14 @@ namespace WebApi_Common.Models
         public string Name { get; set; }
 
 
-
         [Required(ErrorMessage = "A típus kitöltése kötelező")]
-        //[TypeValidation]
+        [TypeValidation]
         public string Type { get; set; }
 
 
         [Required(ErrorMessage = "A Rendszám kitöltése kötelező!")]
         [IDValidation]
-        public string ID { get; set; }
+        public string RSZ { get; set; }
 
         [Required(ErrorMessage = "Az év kitöltése kötelező")]
         [YearValidation]
@@ -30,16 +29,19 @@ namespace WebApi_Common.Models
         [WorkDetailsValidation]
         public string Workdetails { get; set; }
 
-        //[ErrorValidation]
+		[Required(ErrorMessage = "A hiba leírás kitöltése kötelező")]
+		[ErrorValidation]
         public string Error { get; set; }
 
-        [Required(ErrorMessage = "A súlyosság kitöltése kötelező")]
-        public string Seriousness { get; set; }
 
-        //[SeriousnessValidation]
+        [Required(ErrorMessage = "A súlyosság kitöltése kötelező")]
+		[SeriousnessValidation]
+		public string Seriousness { get; set; }
+
+        
         public override string ToString()
         {
-            return $"{Name} - {Type} - {ID}";
+            return $"{Name} - {Type} - {RSZ}";
         }
     }
 }

@@ -15,9 +15,9 @@ namespace WebApi_Common.Validation
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            string ssnValue = value.ToString() ?? " ";
+            string RSZValue = value.ToString() ?? " ";
 
-            if (Regex.IsMatch(ssnValue, @"^\s{3} \d{3}"))
+            if (Regex.IsMatch(RSZValue, @"^[A-Z]{3}-\d{3}$"))
             {
                 return null;
             }

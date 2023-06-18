@@ -7,21 +7,14 @@ namespace WebApi_Common.Validation
     {
 		protected override ValidationResult IsValid(object value, ValidationContext validationContext)
 		{
-			string nameValue = value.ToString() ?? " ";
+			string detValue = value.ToString() ?? " ";
 
-			if (!string.IsNullOrWhiteSpace(nameValue))
+			if (!string.IsNullOrWhiteSpace(detValue))
 			{
-				if (Regex.IsMatch(nameValue, @"^[a-zA-ZáéíöőúüűÁÉÍÖŐÚÜŰ]+(?:\s[a-zA-ZáéíöőúüűÁÉÍÖŐÚÜŰ]+)?$"))
-				{
-					return null;
-				}
-				else
-				{
-					return new ValidationResult("A lrírás formátuma nem megfelelő!", memberNames: new[] { validationContext.MemberName });
-				}
+				return null;
 			}
 
-			return new ValidationResult("A név mező kitöltése kötelező!", new[] { validationContext.MemberName });
+			return new ValidationResult("A Munkaleírás mező kitöltése kötelező!", new[] { validationContext.MemberName });
 		}
 	}
 }
