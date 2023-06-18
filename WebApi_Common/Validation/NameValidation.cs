@@ -11,7 +11,7 @@ namespace WebApi_Common.Validation
 
             if (!string.IsNullOrWhiteSpace(nameValue))
             {
-                if (Regex.IsMatch(nameValue, @"^[a-zA-ZáéíöőúüűÁÉÍÖŐÚÜŰ]+(?:\s[a-zA-ZáéíöőúüűÁÉÍÖŐÚÜŰ]+)?$"))
+                if (Regex.IsMatch(nameValue, @"^[A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]+ [A-ZÁÉÍÓÖŐÚÜŰ][a-záéíóöőúüű]+$"))
                 {
                     return null;
                 }

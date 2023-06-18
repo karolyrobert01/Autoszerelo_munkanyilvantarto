@@ -9,7 +9,7 @@ else
 {
 	<h3>@Work.Name adatai:</h3>
 
-	<EditForm Model="@Work" OnValidSubmit="@ModifyWork" OnInvalidSubmit="@InvalidSubmit">
+	<EditForm Model="@Work" OnValidSubmit="@ModifyWork" OnInvalidSubmit="@ModifyWork">
 		<div class="alert @_statusClass">@_statusMessage</div>
 		<DataAnnotationsValidator />
 		<div class="mb-3 row">
